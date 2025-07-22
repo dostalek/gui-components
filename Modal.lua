@@ -25,7 +25,7 @@ export type Modal = {
 		closeButton: GuiButton?, 
 		toggleButton: GuiButton?) 
 	-> Modal,
-	SetContextAction: (self: Modal, inputObjects: {InputObject}) -> Modal,
+	SetContext: (self: Modal, inputObjects: {InputObject}) -> Modal,
 	
 	Open: (self: Modal) -> (),
 	Close: (self: Modal) -> (),
@@ -121,8 +121,8 @@ function Modal:SetButtons(openButton: GuiButton?, closeButton: GuiButton?, toggl
 	return self
 end
 
--- Set context actions for toggling the modal
-function Modal:SetContextAction(inputObjects: {InputObject})
+-- Set context for toggling the modal
+function Modal:SetContext(inputObjects: {InputObject})
 	self.InputObjects = inputObjects
 	
 	local function handleToggle(_actionName, inputState: Enum.UserInputState, _inputObject)
