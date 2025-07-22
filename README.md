@@ -1,6 +1,6 @@
 # GUI Components
 
-A collection of Roblox game-ready GUI components.
+A collection of Roblox GUI components.
 
 ## How to Use
 
@@ -53,3 +53,5 @@ myModal:SetButtons(nil, nil, toggleButton)
 -- 4. (Optional) Bind an action to toggle the modal
 myModal:SetContextAction({Enum.KeyCode.E})
 ```
+
+**Note:** Creating a new `Modal` instance parents the given `GuiObject` to a `CanvasGroup`, changing its hierarchy. Be mindful of this when referencing it after creating the modal.
