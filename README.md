@@ -27,7 +27,7 @@ Creates a pop-up GUI element from an existing `GuiObject` that tweens into view 
 -- Create a modal instance
 local myModal = Modal.New(
     referenceToGuiObject, -- The GuiObject to act as the modal (e.g., a Frame)
-    TweenInfo.new(0.15),  -- (Optional) The TweenInfo for the modal animation (default (0.25))
+    TweenInfo.new(0.25),  -- (Optional) The TweenInfo for the modal animation (default (0.15))
     16,                   -- (Optional) The background blur intensity (default 24)
     false                 -- (Optional) Whether the modal starts open (default false)
 )

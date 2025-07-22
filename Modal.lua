@@ -54,7 +54,7 @@ function Modal.New(guiObject: GuiObject, tweenInfo: TweenInfo?, blurSize: number
 	local newModal: Modal = {}
 	
 	newModal.GuiObject = guiObject
-	newModal.TweenInfo = if tweenInfo ~= nil then tweenInfo else TweenInfo.new(0.25)
+	newModal.TweenInfo = if tweenInfo ~= nil then tweenInfo else TweenInfo.new(0.15)
 	newModal.BlurSize = if blurSize ~= nil then blurSize else 24
 	newModal.IsOpen = if isOpen ~= nil then isOpen else false
 	
