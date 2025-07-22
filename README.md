@@ -32,7 +32,7 @@ local myModal = Modal.New(
     false                 -- (Optional) Whether the modal starts open (default false)
 )
     -- (Optional) Connect GUI buttons to open, close, or toggle the modal
-    :SetButtons(nil, closeButton, toggleButton)
+    :SetButtons(nil, referenceToCloseButton, referenceToToggleButton)
     -- (Optional) Bind user input type(s) to toggle the modal
     :SetContext({Enum.KeyCode.E})
 ```
