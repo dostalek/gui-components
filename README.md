@@ -32,15 +32,16 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Modal = require(ReplicatedStorage:WaitForChild("Modal"))
 
 -- 1. Get your GUI elements
-local modalFrame = PlayerGui.MyScreenGui.ModalFrame
--- local openButton = PlayerGui.MyScreenGui.OpenButton
--- local closeButton = PlayerGui.MyScreenGui.CloseButton
-local toggleButton = PlayerGui.MyScreenGui.ToggleButton
+local myScreenGui = PlayerGui:WaitForChild("MyScreenGui")
+local modalFrame = myScreenGui:WaitForChild("ModalFrame")
+local toggleButton = myScreenGui:WaitForChild("ToggleButton")
+-- local openButton = myScreenGui:WaitForChild("OpenButton")
+-- local closeButton = myScreenGui:WaitForChild("CloseButton")
 
 -- 2. Create the modal instance
 local myModal = Modal.New(
     modalFrame,          -- Required: The GuiObject to act as the modal
-    TweenInfo.new(0.15), -- Optional: The TweenInfo for the modal animation
+    TweenInfo.new(0.15), -- Optional: The TweenInfo for the modal animation (default TweenInfo.new(0.25))
     16,                  -- Optional: The blur intensity (default 24)
     false                -- Optional: Whether the modal should start open (default false)
 )
