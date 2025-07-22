@@ -50,7 +50,7 @@ local myModal = Modal.New(
 myModal:SetButtons(nil, nil, toggleButton)
 -- myModal:SetButtons(openButton, closeButton, toggleButton)
 
--- 4. (Optional) Bind an action to toggle the modal
+-- 4. (Optional) Bind user input type(s) to toggle the modal
 myModal:SetContextAction({Enum.KeyCode.E})
 ```
 
