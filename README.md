@@ -28,7 +28,7 @@ local newComponent = MyComponent.New(...)
 
 Creates a group of selectable GUI buttons, allowing the user to select one.
 
-### Example:
+#### Example:
 
 ```lua
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -73,7 +73,7 @@ local selected = partyTypeRadio.Selected
 
 Creates a pop-up GUI element, from an existing `GuiObject`, that tweens into view while blurring the background.
 
-### Example:
+#### Example:
 
 ```lua
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
