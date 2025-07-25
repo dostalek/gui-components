@@ -34,7 +34,6 @@ local radioButtons = {radioFrame.PublicButton, radioFrame.PrivateButton}
 
 local function selectFunction(button: TextButton)
 	local uiStroke = button:FindFirstChildOfClass("UIStroke")
-
 	button.BackgroundColor3 = Color3.fromHex("#615fff")
 	button.BackgroundTransparency = 0
 	button.TextColor3 = Color3.fromHex("#ffffff")
@@ -43,19 +42,18 @@ end
 
 local function deselectFunction(button: TextButton)
 	local uiStroke = button:FindFirstChildOfClass("UIStroke")
-
 	button.BackgroundTransparency = 1
 	button.TextColor3 = Color3.fromHex("#e2e8f0")
 	uiStroke.Color = Color3.fromHex("#0f172b")
 end
 
+-- Create a new RadioGroup with given buttons, and appearance functions
 local partyTypeRadio = RadioGroup.New(
 	radioButtons,    -- The radio group buttons
 	radioButtons[1], -- The default selected button
 	selectFunction,  -- Function to set selected appearance of radio button
 	deselectFunction -- Function to set deselected appearance of radio button
 )
-
 -- Access the currently selected button
 local selected = partyTypeRadio.Selected
 ```
@@ -85,12 +83,13 @@ myModal = Modal.New(
     playFrame,           -- The GuiObject to act as the modal
     TweenInfo.new(0.15), -- (Optional) The TweenInfo for the modal animation
     24,                  -- (Optional) The background blur intensity
-    false                -- (Optional) Whether the modal starts open
+    false                -- (Optional) Whteher the modal starts open
 )
-    -- (Optional) Connect GUIButtons to open, close, or toggle the modal
-	:SetButtons(nil, playFrameCloseButton, nil)
-    -- (Optional) Bind user input type(s) to togle the modal
-	:SetContext({Enum.KeyCode.P})
+
+-- (Optional) Connect GUIButtons to open, close, or toggle the modal
+myModal:SetButtons(nil, playFrameCloseButton, nil)
+-- (Optional) Bind user input type(s) to togle the modal
+myModal:SetContext({Enum.KeyCode.P})
 ```
 
 ![Modal-example.gif](./examples/images/Modal-example.gif)

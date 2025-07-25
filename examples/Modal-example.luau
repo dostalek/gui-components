@@ -14,7 +14,8 @@ myModal = Modal.New(
     24,                  -- (Optional) The background blur intensity
     false                -- (Optional) Whteher the modal starts open
 )
-    -- (Optional) Connect GUIButtons to open, close, or toggle the modal
-	:SetButtons(nil, playFrameCloseButton, nil)
-    -- (Optional) Bind user input type(s) to togle the modal
-	:SetContext({Enum.KeyCode.P})
+
+-- (Optional) Connect GUIButtons to open, close, or toggle the modal
+myModal:SetButtons(nil, playFrameCloseButton, nil)
+-- (Optional) Bind user input type(s) to togle the modal
+myModal:SetContext({Enum.KeyCode.P})
