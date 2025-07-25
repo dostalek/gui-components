@@ -2,6 +2,14 @@
 
 A collection of Roblox GUI components.
 
+## Table of Contents
+
+- [GUI Components](#gui-components)
+  - [How to Use](#how-to-use)
+  - [Available Components](#available-components)
+    - [Radio Group](#radio-group)
+    - [Modal](#modal)
+
 ## How to Use
 
 To use a component, place its `ModuleScript` into your game (e.g., inside `ReplicatedStorage`) and `require` it from a `LocalScript`.
