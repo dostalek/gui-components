@@ -8,14 +8,14 @@ local playFrameCloseButton = playFrame.CloseButton
 
 -- Create a new modal instance with 0.15s animation time, 24 background blur,
 -- and closed by default, that can be toggled by pressing "P".
-myModal = Modal.New(
+local myModal = Modal.New(
     playFrame,           -- The GuiObject to act as the modal
     TweenInfo.new(0.15), -- (Optional) The TweenInfo for the modal animation
     24,                  -- (Optional) The background blur intensity
     false                -- (Optional) Whether the modal starts open
 )
-
 -- (Optional) Connect GUIButtons to open, close, or toggle the modal
+-- myModal:SetButtons(<openButton>, <closeButton>, <toggleButton>)
 myModal:SetButtons(nil, playFrameCloseButton, nil)
 -- (Optional) Bind user input type(s) to togle the modal
 myModal:SetContext({Enum.KeyCode.P})
