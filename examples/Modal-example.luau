@@ -12,7 +12,7 @@ myModal = Modal.New(
     playFrame,           -- The GuiObject to act as the modal
     TweenInfo.new(0.15), -- (Optional) The TweenInfo for the modal animation
     24,                  -- (Optional) The background blur intensity
-    false                -- (Optional) Whteher the modal starts open
+    false                -- (Optional) Whether the modal starts open
 )
 
 -- (Optional) Connect GUIButtons to open, close, or toggle the modal
