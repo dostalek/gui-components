@@ -1,13 +1,13 @@
 # GUI Components
 
-A collection of Roblox GUI components.
+Ready-to-use Roblox GUI components that seamlessly integrate with your existing interface elements.
 
 ## Table of Contents
 
 - [How to Use](#how-to-use)
 - [Available Components](#available-components)
-  - [Radio Group](#radio-group)
   - [Modal](#modal)
+  - [Radio Group](#radio-group)
 
 ## How to Use
 
@@ -23,6 +23,40 @@ local newComponent = MyComponent.New(...)
 ```
 
 ## Available Components
+
+### Modal
+
+Creates a pop-up GUI element that tweens into view while blurring the background.
+
+#### Example:
+
+```lua
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Components = ReplicatedStorage:WaitForChild("Components")
+
+local Modal = require(Components:WaitForChild("Modal"))
+
+local playFrame = script.Parent.PlayFrame
+local playFrameCloseButton = playFrame.CloseButton
+
+-- Create a new modal instance with 0.15s animation time, 24 background blur,
+-- and closed by default, that can be toggled by pressing "P".
+local myModal = Modal.New(
+    playFrame,           -- The GuiObject to act as the modal
+    TweenInfo.new(0.15), -- (Optional) The TweenInfo for the modal animation
+    24,                  -- (Optional) The background blur intensity
+    false                -- (Optional) Whether the modal starts open
+)
+-- (Optional) Connect GUIButtons to open, close, or toggle the modal
+-- myModal:SetButtons(<openButton>, <closeButton>, <toggleButton>)
+myModal:SetButtons(nil, playFrameCloseButton, nil)
+-- (Optional) Bind user input type(s) to togle the modal
+myModal:SetContext({Enum.KeyCode.P})
+```
+
+![Modal-example.gif](./examples/images/Modal-example.gif)
+
+**Note:** Creating a new `Modal` instance parents the given `GuiObject` to a `CanvasGroup`, changing its hierarchy. Be mindful of this when referencing it later.
 
 ### Radio Group
 
@@ -68,37 +102,3 @@ local selected = partyTypeRadio.Selected
 ![RadioGroup-example.gif](./examples/images/RadioGroup-example.gif)
 
 **Note:** When a new `RadioGroup` is created, the deselect function is run on each of the given buttons to normalize them.
-
-### Modal
-
-Creates a pop-up GUI element, from an existing `GuiObject`, that tweens into view while blurring the background.
-
-#### Example:
-
-```lua
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Components = ReplicatedStorage:WaitForChild("Components")
-
-local Modal = require(Components:WaitForChild("Modal"))
-
-local playFrame = script.Parent.PlayFrame
-local playFrameCloseButton = playFrame.CloseButton
-
--- Create a new modal instance with 0.15s animation time, 24 background blur,
--- and closed by default, that can be toggled by pressing "P".
-local myModal = Modal.New(
-    playFrame,           -- The GuiObject to act as the modal
-    TweenInfo.new(0.15), -- (Optional) The TweenInfo for the modal animation
-    24,                  -- (Optional) The background blur intensity
-    false                -- (Optional) Whether the modal starts open
-)
--- (Optional) Connect GUIButtons to open, close, or toggle the modal
--- myModal:SetButtons(<openButton>, <closeButton>, <toggleButton>)
-myModal:SetButtons(nil, playFrameCloseButton, nil)
--- (Optional) Bind user input type(s) to togle the modal
-myModal:SetContext({Enum.KeyCode.P})
-```
-
-![Modal-example.gif](./examples/images/Modal-example.gif)
-
-**Note:** Creating a new `Modal` instance parents the given `GuiObject` to a `CanvasGroup`, changing its hierarchy. Be mindful of this when referencing it later.
