@@ -1,6 +1,8 @@
 # GUI Components
 
-Ready-to-use Roblox GUI components that seamlessly integrate with your existing interface elements.
+A collection of Roblox GUI components that seamlessly integrate with your existing interface elements.
+
+**Note:** The components in this repository serve to provide functionality to your GUI elements, not build them for you.
 
 ## Table of Contents
 
